@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 from pandas import DataFrame
 from dir_walker import walker
 import re
+import os
 
 class CV:
     def __init__(self, info, data, low, high, segments):
@@ -10,6 +11,7 @@ class CV:
         self.low = low
         self.high = high
         self.segments = segments
+        self.full_info = self.info+' '+str(self.low)+' to '+str(self.high)+' seg'+str(self.segments)
     
     def plot(self, label, pos):
         pos = self.data.plot(x = 'Potential',
@@ -22,16 +24,15 @@ class CV:
         pos.set_xlabel('Potential')
         pos.set_ylabel('Current')
         
-    def save(self, filename, path):
-        self.data.to_csv(path+filename+'.csv',
+    def save(self, filename, path = os.getcwd()):
+        header = ['Potential', 'Current']
+        self.data.to_csv(path+'/'+filename+'.csv',
                          index = False,
                          header = False,
-                         cols = ['Potential', 'Current'])
-    
-    def full_info(self):
-        return self.info+' '+str(self.low)+'to'+str(self.high)+' '+str(self.segments)
+                         columns = header)
+        print("Saved to "+path+filename+'.csv')
 
-        
+
 def find_segments(data):
     num_seg = 1
     seg_label = []
@@ -98,7 +99,8 @@ def cycle_split(cv):
     for i in cycles:
         cv_cycles.append(CV(cv.info, cv.data.ix[i], cv.low, cv.high, i))
     return cv_cycles
-    
+
+
 if __name__ == '__main__':
     rootdir = 'T:/programs/python/py_CV/data/'
     for filename, subdir in walker(rootdir, re.compile('cv(.*?)txt')):
@@ -106,5 +108,5 @@ if __name__ == '__main__':
         cv = txt_to_CV(subdir+'/'+filename, filename[:len(filename) - 4])
         for i, cv_cycle in enumerate(cycle_split(cv)):
             cv_cycle.plot('cycle '+str(i + 1), pos)
-        plt.savefig(subdir+'/'+cv.full_info()+'.png', dpi=300)
-        print(subdir+'/'+cv.full_info()+'.png'+' Saved')
+        plt.savefig(subdir+'/'+cv.full_info+'.png', dpi=300)
+        print(subdir+'/'+cv.full_info+'.png'+' Saved')

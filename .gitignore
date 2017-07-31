@@ -1,6 +1,8 @@
 __pycache__/*
 data/*
 test/*
+.idea/*
 *.png
 *.txt
 *.rar
+test.py

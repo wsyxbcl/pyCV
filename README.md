@@ -1,5 +1,7 @@
 # PyCV
-Used to process CV data from CHI660E Electrochemical Workstation  
+Used to process CV data from CHI660E Electrochemical Workstation  
+It's a user-unfriendly script for it's mainly used by few guys in our lab.  
+Reach yx_chai@whu.edu.cn if there's any question.  
 
 The program will walk through aimed dir and get all files that match given re(defalut:'cv(.*?)txt') as CV data files to form CV objects.  
 A CV object can be seperated by cycle and plotted(based on matplotlib) using this program.  

@@ -1,5 +1,5 @@
 # PyCV
-Used to process CV data from CHI660E Electrochemical Workstation  
+Used to process Cyclic Voltammetry data from CHI660E Electrochemical Workstation  
 It's a user-unfriendly script for it's mainly used by few guys in our lab.    
 
 The program will walk through aimed dir and get all files that match given re(defalut:'cv(.*?)txt') as CV data files to form CV objects.  

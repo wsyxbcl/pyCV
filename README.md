@@ -12,4 +12,4 @@ Cycles seperated and plotted
 ![image](https://github.com/wsyxbcl/pyCV/blob/master/demo/cv_sample.png)  
 
 Different CV curves overlapped  
-![image](https://github.com/wsyxbcl/pyCV/blob/master/demo/overlap_demo.png)
+![image](https://github.com/wsyxbcl/pyCV/blob/master/demo/overlap/metal_weird_cv.png)

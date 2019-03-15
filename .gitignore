@@ -5,4 +5,5 @@ test/*
 *.png
 *.rar
 *.bin
-*.
+*.pickle
+*/list_cv.txt

@@ -3,6 +3,6 @@ data/*
 test/*
 .idea/*
 *.png
-*.txt
 *.rar
-test.py
+*.bin
+*.

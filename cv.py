@@ -61,7 +61,11 @@ def find_segments(data):
     return [num_seg, seg_label]
 
 
-def txt_to_CV(file, info='CV test'):
+def txt_to_CV(file, info='CV test', WE2=0):
+    """
+    WE2: Sometimes there're 2 working electrodes, set WE2 to 1 if you
+    want to use current collected from WE2 channel. 
+    """
     h = 0
     l = 0
     record = 0
@@ -83,7 +87,10 @@ def txt_to_CV(file, info='CV test'):
     current = []
     potential = []
     for i in a[1:]:
-        current.append(float(i.split()[1]))
+        if WE2:
+            current.append(float(i.split()[2]))
+        else:
+            current.append(float(i.split()[1]))
         potential.append(float(i.split()[0]))
     data = {"Potential": potential, "Current": current}
     frame = DataFrame(data)

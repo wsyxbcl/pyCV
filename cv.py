@@ -75,10 +75,10 @@ def txt_to_CV(file, info='CV test', WE2=0):
         for line in f:
             if not (h and l):
                 if line.startswith('High'):
-                    high = float(line.split()[4])
+                    high = float(re.split(', |,| |\t', line)[4])
                     h = 1
                 if line.startswith('Low'):
-                    low = float(line.split()[4])
+                    low = float(re.split(', |,| |\t', line)[4])
                     l = 1
             if record:
                 a.append(line)
@@ -88,10 +88,10 @@ def txt_to_CV(file, info='CV test', WE2=0):
     potential = []
     for i in a[1:]:
         if WE2:
-            current.append(float(i.split()[2]))
+            current.append(float(re.split(', |,| |\t', i)[2]))
         else:
-            current.append(float(i.split()[1]))
-        potential.append(float(i.split()[0]))
+            current.append(float(re.split(', |,| |\t', i)[1]))
+        potential.append(float(re.split(', |,| |\t', i)[0]))
     data = {"Potential": potential, "Current": current}
     frame = DataFrame(data)
     [num_seg, seg_label] = find_segments(frame)

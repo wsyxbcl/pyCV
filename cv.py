@@ -17,7 +17,7 @@ class CV:
         self.high = high
         self.segments = segments
 
-    def plot(self, *, labels=None, title=None, xlim=None, pos=plt.subplots(1, 1)[1]):
+    def plot(self, *, labels=None, title=None, xlim=None, pos=plt.subplots(1, 1)[1], xlabel="Potential", ylabel="Current/A"):
         if xlim is None:
             xlim = [self.low, self.high]
         if title is None:
@@ -29,8 +29,8 @@ class CV:
                              label=labels,
                              title=title,
                              grid=True)
-        pos.set_xlabel('Potential')
-        pos.set_ylabel('Current')
+        pos.set_xlabel(xlabel)
+        pos.set_ylabel(ylabel)
 
     def save(self, filename, path=Path(os.getcwd())):
         header = ['Potential', 'Current']

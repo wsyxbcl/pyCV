@@ -8,8 +8,12 @@ Overlap of different CV curves is also supported, the overlap.py is an example.
 Input file is generated from CHI660E Electrochemical Workstation(cv_sample.txt is an example).
 
 ## Demo
-Cycles seperated and plotted  
+### Cycles seperated and plotted  
 ![image](https://github.com/wsyxbcl/pyCV/blob/master/demo/cv_sample.png)  
 
-Different CV curves overlapped  
+### Different CV curves overlapped  
 ![image](https://github.com/wsyxbcl/pyCV/blob/master/demo/overlap/metal_weird_cv.png)
+
+### Four-electrode system
+Using ORR on RRDE as a example.  
+![image](https://github.com/wsyxbcl/pyCV/blob/master/demo/overlap/four_electrode.png)

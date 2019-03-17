@@ -12,7 +12,7 @@ for filename, subdir in walker(rootdir, re.compile('cv(.*?)txt')):
     cv = txt_to_CV(Path(subdir).joinpath(Path(filename)), info=filename[:-4])
 
     for i, cv_cycle in enumerate(cycle_split(cv)):
-        cv_cycle.plot(labels='cycle ' + str(i + 1), pos=pos1, title='disk electrode', xlabel=None)
+        cv_cycle.plot(labels='cycle ' + str(i + 1), pos=pos1, title='disc electrode', xlabel=None)
     cv = txt_to_CV(Path(subdir).joinpath(Path(filename)), info=filename[:-4], WE2=1)
 
     for i, cv_cycle in enumerate(cycle_split(cv)):

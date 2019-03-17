@@ -16,4 +16,4 @@ Input file is generated from CHI660E Electrochemical Workstation(cv_sample.txt i
 
 ### Four-electrode system
 Using ORR on RRDE as a example.  
-![image](https://github.com/wsyxbcl/pyCV/blob/master/demo/four_electrode/cv_four_electrode.png)
+![image](https://github.com/wsyxbcl/pyCV/blob/master/demo/four_electrode/cv_orr_four_electrode.png)

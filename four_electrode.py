@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from cv import *
 from dir_walker import walker
 
-rootdir = Path('C:/code/pyCV/demo/four_electrode')
+rootdir = Path('./demo/four_electrode')
 for filename, subdir in walker(rootdir, re.compile('cv(.*?)txt')):
     fig, (pos1, pos2) = plt.subplots(2, 1, constrained_layout=True)
     cv = txt_to_CV(Path(subdir).joinpath(Path(filename)), info=filename[:-4])

@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 from cv import *
 
-rootdir = Path('C:/code/pyCV/demo/overlap')
+rootdir = Path('./demo/overlap')
 cv_list = cv_collect(rootdir)
 
 # if os.path.isfile(rootdir.joinpath('cv_data.pickle')):

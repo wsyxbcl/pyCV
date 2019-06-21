@@ -171,7 +171,7 @@ def cv_collect(rootdir):
 __all__ = ['CV', 'find_segments', 'cycle_split', 'txt_to_CV', 'cv_collect', 'overlap']
 
 if __name__ == '__main__':
-    rootdir = Path('C:/code/pyCV/demo')
+    rootdir = Path('./demo')
     for filename, subdir in walker(rootdir, re.compile('cv(.*?)txt')):
         fig, pos = plt.subplots(1, 1)
         cv = txt_to_CV(Path(subdir).joinpath(Path(filename)), info=filename[:-4])
